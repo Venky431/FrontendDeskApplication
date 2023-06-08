@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table  id="myTable" class="table table-striped table-bordered table-hover">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Course</th>
+        <th scope="col">Number</th>
+        <th scope="col">Class Mode</th>
+
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr  th:each ="enquiry ,state: ${enquiries}">
+        <td th:text="${state.index+1}"></td>
+        <td th:text="${enquiry.name}"></td>
+        <td th:text="${enquiry.course}"></td>
+        <td th:utext="${enquiry.contactNo}"></td>
+        <td th:utext="${enquiry.classMode}"></td>
+        <td th:text="${enquiry.enquiryStatus}"></td>
+        <td><a href="enquiry" class="btn btn-primary">Edit</a></td>
+
+    </tr>
+
+    </tbody>
+</table>
+
+
+</body>
+</html>
